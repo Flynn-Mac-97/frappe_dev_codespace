@@ -11,10 +11,10 @@ fi
 rm -rf /workspaces/frappe_codespace/.git
 
 source /home/frappe/.nvm/nvm.sh
-nvm alias default 18
-nvm use 18
+nvm alias default 24
+nvm use 24
 
-echo "nvm use 18" >> ~/.bashrc
+echo "nvm use 24" >> ~/.bashrc
 cd /workspace
 
 bench init \
