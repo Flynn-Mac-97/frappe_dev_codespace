@@ -6,26 +6,26 @@
         },
         "required": [],
         "idx": 1,
-        "version": "17.0.0-dev"
-    },
-    "online_store_integration": {
-        "is_repo": true,
-        "resolution": {
-            "commit_hash": "f4b655c64f92a3c816d5784467a75af2bc6cf1c9",
-            "branch": "develop"
-        },
-        "required": [],
-        "idx": 2,
-        "version": "0.0.1"
+        "version": "15.96.0"
     },
     "erpnext": {
         "is_repo": true,
         "resolution": {
-            "commit_hash": "3fe5b5c80d2781e2496e93eab4858956f81bb7e6",
+            "commit_hash": "d82ab066bd67c6a4584f72c3bb8848da41496378",
+            "branch": "version-15"
+        },
+        "required": [],
+        "idx": 2,
+        "version": "15.94.3"
+    },
+    "online_store_integration": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "bf4e0e6496470e37a150934c10b14135314f8c12",
             "branch": "develop"
         },
         "required": [],
         "idx": 3,
-        "version": "17.0.0-dev"
+        "version": "0.0.1"
     }
 }
