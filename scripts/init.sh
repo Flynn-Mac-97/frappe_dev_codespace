@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 set -e
 
@@ -17,9 +17,14 @@ nvm use 24
 echo "nvm use 24" >> ~/.bashrc
 cd /workspace
 
+# Set compatibility flag for Python 3.14
+export PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1
+
 bench init \
 --ignore-exist \
 --skip-redis-config-generation \
+--frappe-branch version-15 \
+--python python3 \
 frappe-bench
 
 cd frappe-bench
@@ -33,11 +38,16 @@ bench set-redis-socketio-host redis://redis-socketio:6379
 # Remove redis from Procfile
 sed -i '/redis/d' ./Procfile
 
+# Get ERPNext version 15
+bench get-app erpnext --branch version-15 https://github.com/frappe/erpnext.git
 
 bench new-site dev.localhost \
 --mariadb-root-password 123 \
 --admin-password admin \
 --no-mariadb-socket
+
+# Install ERPNext on the site
+bench --site dev.localhost install-app erpnext
 
 bench --site dev.localhost set-config developer_mode 1
 bench --site dev.localhost clear-cache
